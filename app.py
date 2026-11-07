@@ -104,23 +104,15 @@ def main():
 
         with col1:
             st.subheader("1. Ảnh đầu vào")
-            input_mode = st.radio("Nguồn ảnh:", ["Chọn ảnh mẫu", "Tải ảnh từ máy"], horizontal=True)
-
+            uploaded = st.file_uploader("Upload file ảnh (JPG, PNG):", type=["jpg", "jpeg", "png"])
+            
             img_bgr = None
-            if input_mode == "Chọn ảnh mẫu":
-                samples = list(Path("test_samples").rglob("*.jpg"))
-                if samples:
-                    selected_sample = st.selectbox("Chọn ảnh mẫu:", samples, format_func=lambda p: f"{p.parent.name} / {p.name}")
-                    img_bgr = cv2.imread(str(selected_sample))
-                    st.image(cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB), caption=selected_sample.name, use_container_width=True)
-                else:
-                    st.info("Chưa có ảnh mẫu trong thư mục test_samples.")
+            if uploaded:
+                file_bytes = np.asarray(bytearray(uploaded.read()), dtype=np.uint8)
+                img_bgr = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
+                st.image(cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB), caption=uploaded.name, use_container_width=True)
             else:
-                uploaded = st.file_uploader("Upload file ảnh (JPG, PNG):", type=["jpg", "jpeg", "png"])
-                if uploaded:
-                    file_bytes = np.asarray(bytearray(uploaded.read()), dtype=np.uint8)
-                    img_bgr = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
-                    st.image(cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB), caption=uploaded.name, use_container_width=True)
+                st.info("Hãy upload ảnh để bắt đầu phân loại.")
 
         with col2:
             st.subheader("2. Kết quả nhận diện")
