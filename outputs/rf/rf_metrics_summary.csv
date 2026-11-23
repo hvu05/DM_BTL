@@ -1,0 +1,5 @@
+model,branch,split,best_hyperparams,accuracy,balanced_accuracy,macro_precision,macro_recall,macro_f1,weighted_f1,train_time_sec,predict_time_sec
+RandomForest,direct,val,"n_estimators=50,max_depth=None,class_weight=none",0.6016,0.3729,0.7258,0.3729,0.4026,0.5522,23.52,0.05
+RandomForest,direct,test,"n_estimators=50,max_depth=None,class_weight=none",0.6228,0.3899,0.744,0.3899,0.4111,0.5735,23.52,0.05
+RandomForest,padding,val,"n_estimators=200,max_depth=20,class_weight=none",0.6205,0.3904,0.7952,0.3904,0.4268,0.5734,70.21,0.12
+RandomForest,padding,test,"n_estimators=200,max_depth=20,class_weight=none",0.6304,0.3976,0.6379,0.3976,0.4263,0.5835,70.21,0.12
