@@ -33,3 +33,9 @@ dataset/sohas_hog_*/
 *.log
 *.tmp
 *.bak
+
+.venv/
+dataset/
+Sohas_weapon-Classification/
+*.joblib
+*.npz

@@ -1,0 +1,18 @@
+{
+  "branch": "padding",
+  "best_params": {
+    "knn__metric": "euclidean",
+    "knn__n_neighbors": 5,
+    "knn__weights": "distance",
+    "pca__n_components": 100
+  },
+  "cv_best_macro_f1": 0.597,
+  "test_accuracy": 0.7197,
+  "test_macro_f1": 0.6177,
+  "test_weighted_f1": 0.7157,
+  "test_macro_precision": 0.6368,
+  "test_macro_recall": 0.611,
+  "best_model_fit_time_sec": 6.18,
+  "test_predict_time_sec": 1.184,
+  "ms_per_image_predict": 0.248
+}

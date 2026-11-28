@@ -1,0 +1,18 @@
+{
+  "branch": "direct",
+  "best_params": {
+    "knn__metric": "euclidean",
+    "knn__n_neighbors": 7,
+    "knn__weights": "distance",
+    "pca__n_components": 100
+  },
+  "cv_best_macro_f1": 0.6803,
+  "test_accuracy": 0.7869,
+  "test_macro_f1": 0.6909,
+  "test_weighted_f1": 0.7846,
+  "test_macro_precision": 0.7074,
+  "test_macro_recall": 0.6857,
+  "best_model_fit_time_sec": 5.593,
+  "test_predict_time_sec": 1.202,
+  "ms_per_image_predict": 0.252
+}
